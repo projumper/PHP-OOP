@@ -8,9 +8,11 @@ abstract class Fruit {
 
     protected $art;
 
-    function __construct()
+    function __construct($name)
     {
         //$this->name = $name;
+
+        //$apple = mew Apple("Name");
     }
 
     /**
@@ -29,6 +31,9 @@ abstract class Fruit {
     function setName($name)
     {
         $this->name = $name;
+
+        //$apple = new Apple();
+        //$apple->setName("Name");
 
         return $this;
     }
