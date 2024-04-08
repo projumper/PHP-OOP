@@ -17,3 +17,10 @@ while ($b <= 10) {
 
 /*das ist ein Kommentar */
 /*das ist ein Kommentar */
+
+$action1; 
+$action2; 
+$action3; 
+$action4; 
+
+

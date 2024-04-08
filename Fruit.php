@@ -1,16 +1,22 @@
 <?php
 
-class Fruit {
-    public $name;
+abstract class Fruit {
+    private $name;
 
     public $color;
+    public $amount;
 
+    protected $art;
 
+    function __construct()
+    {
+        //$this->name = $name;
+    }
 
     /**
      * Get the value of name
      */ 
-    public function getName()
+    function getName()
     {
         return $this->name;
     }
@@ -20,7 +26,7 @@ class Fruit {
      *
      * @return  self
      */ 
-    public function setName($name)
+    function setName($name)
     {
         $this->name = $name;
 
@@ -30,7 +36,7 @@ class Fruit {
     /**
      * Get the value of color
      */ 
-    public function getColor()
+    function getColor()
     {
         return $this->color;
     }
@@ -40,19 +46,17 @@ class Fruit {
      *
      * @return  self
      */ 
-    public function setColor($color)
+    function setColor($color)
     {
         $this->color = $color;
 
         return $this;
     }
+
+    abstract function message();
+
+    function __destruct()
+    {
+        //echo "I am a ". $this->name."\n\r";
+    }
 }
-
-$apple = new Fruit();
-$banne = new Fruit();
-$strwberry = new Fruit();
-
-//BAD
-//$apple->name = "Boskop";
-$apple->setName("Boskop");
-echo $apple->getName();
