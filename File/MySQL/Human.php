@@ -16,6 +16,9 @@ class Human
     }
 }
 
+$name = "";
+$weight = "";
+
 $mysqli = new mysqli("localhost", "root", "", "OOP");
 
 if($mysqli->connect_error){
@@ -42,12 +45,29 @@ while ($row = $res->fetch_assoc()) {
 
 
 $ivan = new Human($humanArray[0]["name"], $humanArray[0]['weight'], $humanArray[0]['age']);
+$Linh = new Human($humanArray[4]["name"], $humanArray[4]['weight'], $humanArray[4]['age']);
 
 var_dump($ivan);
 
-$ivan->weight = 87;
+//Update
+
+$ivan->weight = 50;
+$ivan->name   = "Linh";
+$ivan->age    = 42;
 
 //CRUD <-----
 
 
 var_dump($ivan);
+
+echo $sql = "UPDATE `human` SET `name` = '$ivan->name', `weight` = '$ivan->weight', `age` = '$ivan->age' WHERE `human`.`id` = 1;";
+
+//$mysqli->query($sql);
+
+//Insert Create
+$sql = "INSERT INTO human (id, name, weight, age) VALUES (NULL, '$ivan->name', '$ivan->weight', '$ivan->age')";
+$mysqli->query($sql);
+
+//DELETE
+$sql = "DELETE FROM human WHERE human.id = 3";
+//$mysqli->query($sql);
