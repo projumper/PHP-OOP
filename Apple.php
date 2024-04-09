@@ -13,4 +13,5 @@ class Apple extends Fruit{
 }
 
 $ap = new Apple();
+
 $ap->message();
