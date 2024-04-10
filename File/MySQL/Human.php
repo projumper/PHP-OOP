@@ -1,5 +1,5 @@
 <?php
-
+include_once("Mysql.php");
 class Human
 {
     public $name;
@@ -19,22 +19,16 @@ class Human
 $name = "";
 $weight = "";
 
-$mysqli = new mysqli("localhost", "root", "", "OOP");
+$mysqli = new Mysql();
+$mysqli->select('flight_logs', "where aircraft_type='airbus' and airline_name='Lufthansa'");
 
-if($mysqli->connect_error){
-    die("problem moit der Verbindung");
-}
 
 //SELECT column_name(s) FROM table_name
 //$sql = "SELECT * FROM `human`;";
 
 //READ
-$sql = "SELECT * FROM `human`";
 
-
-
-$res = $mysqli->query($sql);
-
+/*
 while ($row = $res->fetch_assoc()) {
     //var_dump($row);    
     //die();
@@ -71,3 +65,4 @@ $mysqli->query($sql);
 //DELETE
 $sql = "DELETE FROM human WHERE human.id = 3";
 //$mysqli->query($sql);
+*/
