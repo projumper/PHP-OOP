@@ -2,9 +2,6 @@
 
 class Mysql
 {
-    
-
-
     public $mysqli;
 
     function __construct(){
@@ -37,8 +34,15 @@ class Mysql
         }else{
             echo $sql = "SELECT * FROM ".$table;
         }
-        
+
         $res = $this->mysqli->query($sql);
+
+        while ($row = $res->fetch_assoc()) {
+           
+            $dataArray[] = $row;
+        }
+
+        return $dataArray;
      }
 
     //Update ($data, $where)

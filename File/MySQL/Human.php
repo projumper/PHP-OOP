@@ -16,33 +16,20 @@ class Human
     }
 }
 
-$name = "";
-$weight = "";
 
 $mysqli = new Mysql();
-$mysqli->select('flight_logs', "where aircraft_type='airbus' and airline_name='Lufthansa'");
+$exampleArray = $mysqli->select('human');
 
-
-//SELECT column_name(s) FROM table_name
-//$sql = "SELECT * FROM `human`;";
-
-//READ
-
-/*
-while ($row = $res->fetch_assoc()) {
-    //var_dump($row);    
-    //die();
-    $human = array('name'=>$row['name'], 'weight'=>$row['weight'], 'age'=>$row['age'] );
-    $humanArray[] = $human;
-
+foreach ($exampleArray as $example) {
+    # code...
 }
 
 
-$ivan = new Human($humanArray[0]["name"], $humanArray[0]['weight'], $humanArray[0]['age']);
-$Linh = new Human($humanArray[4]["name"], $humanArray[4]['weight'], $humanArray[4]['age']);
+var_dump($exampleArray);
 
-var_dump($ivan);
 
+
+/*
 //Update
 
 $ivan->weight = 50;
