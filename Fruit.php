@@ -65,3 +65,6 @@ abstract class Fruit {
         //echo "I am a ". $this->name."\n\r";
     }
 }
+
+
+$mysqli = new Mysql();

@@ -12,6 +12,8 @@ class Apple extends Fruit{
 
 }
 
+$mysqli = new Mysql();
+
 $ap = new Apple();
 
 $ap->message();
