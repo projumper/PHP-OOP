@@ -17,6 +17,8 @@ class Human
 }
 
 
+
+
 $mysqli = new Mysql();
 $exampleArray = $mysqli->select('human');
 
